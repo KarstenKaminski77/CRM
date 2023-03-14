@@ -1,0 +1,94 @@
+<div class="main-sidebar sidebar-dark-tnagele-light  sidebar-no-expand">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link py-0 bg-white">
+        <div class="py-1">
+            <img src="{{ asset('images/logo.png') }}" alt="TnageleSidebar Logo" class="img-fluid py-2"
+                 style="max-height: 60px">
+        </div>
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-flat">
+                {# Users #}
+                <li
+                    class="nav-item has-treeview"
+                    data-controller="admin--users"
+                >
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>Users</p>
+                        <i class="right fas fa-angle-left"></i>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a
+                                href="#" class="nav-link active"
+                                data-action="click->admin--users#onClickCreateNew"
+                            >
+                                <i class="fas fa-circle nav-icon"></i>
+                                <p>
+                                    Create New
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                href="#"
+                                class="nav-link active"
+                                data-action="click->admin--users#onClickGetUsers"
+                            >
+                                <i class="fas fa-circle nav-icon"></i>
+                                <p>
+                                    View List
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon far fa-tasks"></i>
+                        <p>Tasks</p>
+                        <i class="right fas fa-angle-left"></i>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" data-action="click->admin--users#onClickCreateNew">
+                                <i class="fas fa-circle nav-icon"></i>
+                                <p>
+                                    Create New
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="fas fa-circle nav-icon"></i>
+                                <p>
+                                    View All
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ path('admin_logout') }}" class="nav-link">
+                        <i class="nav-icon fa-light fa-arrow-up-left-from-circle"></i>
+                        <p>Sign Out</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+        <div id="info">
+        </div>
+    </div>
+    <!-- Brand Logo -->
+    <div class=" sidebar-footer">
+        <a id="pushmenu-sidebar" class="text-decoration-none" href="#">
+            <i class="fa fa-lg fa-chevron-left"></i>
+        </a>
+    </div>
+    <!-- /.sidebar -->
+</div>

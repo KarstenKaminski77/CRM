@@ -1,0 +1,45 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="content-wrapper p-5">
+        <form action="{{ path('app_login') }}" method="post">
+            <div class="row pt-3">
+                <div class="col-12 text-center mt-1 pt-3 pb-3" id="order_header">
+                    <h4 class="text-primary">Fluid Sign In</h4>
+                    <span class="text-primary">
+                        Sign in to your Fluid wholesale account or easily create a new account.
+                    </span>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 col-md-4 offset-xs-0 offset-md-1">
+                    <input type="text" id="username" class="form-control" name="_username" placeholder="Email" value="{{ last_username }}"/>
+                </div>
+                <div class="col-12 col-md-4 position-relative">
+                    <input type="password" id="password" class="form-control" placeholder="Password" name="_password"/>
+                </div>
+                <div class="col-12 col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">SIGN IN</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+
+        $(document).ready(function()
+        {
+            let height = $('.brand-link').height();
+            $('.main-header').css({'height': height + 1});
+        });
+
+    </script>
+{% endblock %}

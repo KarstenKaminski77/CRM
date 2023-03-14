@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block meta_decription %}
+            <meta name="description" content="Fluid Commerce">
+        {% endblock %}
+
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="theme-color" content="#545659"/>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link rel="icon" href="{{ asset('images/logo.png') }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="" />
+        <link rel="apple-touch-icon" sizes="152x152" href="" />
+        <link rel="manifest" href="{{ asset('manifest.json') }}" />
+
+        <script type="module">
+            import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+            const el = document.createElement('pwa-update');
+            document.body.appendChild(el);
+        </script>
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/sidebar.min.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/style.min.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/OverlayScrollbars.min.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/fontawesome-pro/css/all.min.css') }}">
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container-fluid min-vh-100">
+            {% block body %}
+            {% endblock %}
+            {% block javascripts %}
+                {{ encore_entry_script_tags('app') }}
+                <script src="{{ asset('js/jquery.overlayScrollbars.min.js') }}"></script>
+                <!-- Tnagele SideBar JS -->
+                <script src="{{ asset('js/sidebar.min.js') }}"></script>
+                <!-- Demo JS App -->
+                <script src="{{ asset('js/crm.min.js') }}"></script>
+            {% endblock %}
+        </div>
+    </body>
+</html>

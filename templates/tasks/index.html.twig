@@ -1,0 +1,25 @@
+{% extends '/admin/layout.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div
+        class="content-wrapper p-3"
+        data-controller=""
+    >
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+
+        $(document).ready(function()
+        {
+            let height = $('.brand-link').height();
+            $('.main-header').css({'height': height + 1});
+        });
+
+    </script>
+{% endblock %}
